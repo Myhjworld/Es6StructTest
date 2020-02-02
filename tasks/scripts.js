@@ -23,8 +23,8 @@ import { log, colors } from 'gulp-util';
 // 命令行参数解析包
 import args from './util/args';
 
-gulp.task('script', () => {
-    return gulp.src(['app/js/indexedDB.js'])
+gulp.task('scripts', () => {
+    return gulp.src(['app/js/index.js'])
         .pipe(plumber({
             errorHandler: function() {
 
@@ -33,7 +33,7 @@ gulp.task('script', () => {
         .pipe(named())
         .pipe(gulpWebpack({
             module: {
-                loaders: [{
+                rules: [{
                     test: /\.js$/,
                     loader: 'babel'
                 }]
@@ -46,7 +46,7 @@ gulp.task('script', () => {
         .pipe(gulp.dest('server/public/js'))
         .pipe(rename({
             basename: 'cp',
-            extname: 'min.js'
+            extname: '.min.js'
         }))
         .pipe(uglify({
             compress: { properties: false },
