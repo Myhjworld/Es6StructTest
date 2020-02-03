@@ -1,3 +1,10 @@
-(function() {
-    console.log("1");
-})();
+import './class/test'
+// class Test {
+//     constructor() {
+//         this.a = 'hello world'
+//     }
+// }
+
+// let test = new Test();
+
+// document.body.innerHTML = test.a;

@@ -32,10 +32,11 @@ gulp.task('scripts', () => {
         }))
         .pipe(named())
         .pipe(gulpWebpack({
+            mode: 'development',
             module: {
                 rules: [{
                     test: /\.js$/,
-                    loader: 'babel'
+                    loader: 'babel-loader'
                 }]
             }
         }), null, (err, stats) => {

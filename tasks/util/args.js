@@ -32,3 +32,5 @@ const args = yargs
 
 .argv
 //    .argv  表示以字符串形式解析
+// args一定要暴露出去否则gulp --watch 不会完成监听
+export default args;
